@@ -11,3 +11,8 @@ export async function allBooks() {
     throw err;
   }
 }
+
+export function imageUrl(size, id) {
+  const zoom = size === 'SMALL' ? 1 : 0;  
+  return `https://books.google.com/books/content?id=${id}&printsec=frontcover&img=1&zoom=${zoom}&source=gbs_api`;
+}
