@@ -8,7 +8,7 @@ const typeDefs = `
   }
 
   type Book {
-    id: ID,
+    id: ID!,
     title: String!
     description: String!
     imageUrl: String!

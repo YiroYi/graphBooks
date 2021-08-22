@@ -6,14 +6,9 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { graphql } from 'graphql';
 
 import typeDefs from './typedefs';
+import resolvers from './resolvers';
 
 
-const resolvers = {
-  Query: {
-    hello: () => 'World',
-    name: () => 'James',
-  },
-};
 
 const schema = makeExecutableSchema({ typeDefs, resolvers });
 
