@@ -6,8 +6,11 @@ const resolvers = {
     imageUrl: (book, {size}) => {
       return imageUrl(size, book.googleId);
     },
-    authors: book => {
-      return authorsByBookId(book.id);
+    authors: (book, args, context) => {
+      const { loaders } = context;
+      const { findAuthorsByBookIdsLoader } = loaders;
+      return  findAuthorsByBookIdsLoader.load(book.id);
+      //return authorsByBookId(book.id);
     }
   },
   Query: {
